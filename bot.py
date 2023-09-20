@@ -83,7 +83,7 @@ def AutoCommand(tokens, chatid):
 
 
 if __name__ == '__main__':
-    tokens = os.getenv('TELEBOT_TOKEN')
+    tokens = os.getenv('TELEBOT_TOKENS')
     chatid = os.getenv('TELEBOT_CHATID')
     
     app = Application.builder().token(tokens).build()

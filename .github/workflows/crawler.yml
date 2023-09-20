@@ -27,5 +27,5 @@ jobs:
     - name: Run Python Telebot
       run: python bot.py
       env:
-        TELEBOT_TOKEN: ${{ secrets.TELEBOT_TOKEN }}
+        TELEBOT_TOKENS: ${{ secrets.TELEBOT_TOKENS }}
         TELEBOT_CHATID: ${{ secrets.TELEBOT_CHATID }}
