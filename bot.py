@@ -76,18 +76,16 @@ async def MaunalCommands_2(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def AutoCommand(tokens, chatid):
     bot = telebot.TeleBot(tokens)
     title = "   {} 科技新報   \n".format(date.today())
-    print(title)
-    bot.send_message("1093911183", title)
+    
+    bot.send_message(chatid, title)
     # newest5 = CrawlUrl("https://technews.tw/")
     # for text in newest5:
     #     bot.send_message(chatid, text)
 
 
 if __name__ == '__main__':
-    tokens = os.getenv('TELEBOT_TOKENS')
-    chatid = os.getenv('TELEBOT_CHATID')
-    print("chatid= ",chatid)
-    
+    tokens = str(os.getenv('TELEBOT_TOKENS'))
+    chatid = str(os.getenv('TELEBOT_CHATID'))
     app = Application.builder().token(tokens).build()
 
     # commands 科技新報各單元
@@ -100,7 +98,8 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler("finance", MaunalCommands_1))
     app.add_handler(MessageHandler(filters=filters.TEXT, callback=MaunalCommands_2))
     
-    print("start polling")
+    
     AutoCommand(tokens, chatid)
     # 開始運作bot
-    app.run_polling()
+    # print("start polling")
+    #app.run_polling()
