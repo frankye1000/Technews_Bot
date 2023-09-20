@@ -1,3 +1,4 @@
+import os
 import telebot
 import requests
 from datetime import date
@@ -82,8 +83,9 @@ def AutoCommand(tokens, chatid):
 
 
 if __name__ == '__main__':
-    tokens = "1268350480:AAG-upYw59hIaq3uDS7xAJln-41I2aKMgfU"
-    chatid = "1093911183"
+    tokens = os.getenv('TELEBOT_TOKEN')
+    chatid = os.getenv('TELEBOT_CHATID')
+    
     app = Application.builder().token(tokens).build()
 
     # commands 科技新報各單元
