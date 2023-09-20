@@ -77,7 +77,7 @@ def AutoCommand(tokens, chatid):
     bot = telebot.TeleBot(tokens)
     title = "   {} 科技新報   \n".format(date.today())
     print(title)
-    bot.send_message(chatid, title)
+    bot.send_message("1093911183", title)
     # newest5 = CrawlUrl("https://technews.tw/")
     # for text in newest5:
     #     bot.send_message(chatid, text)
