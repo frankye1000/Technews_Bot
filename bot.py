@@ -79,7 +79,7 @@ def AutoCommand(tokens, chatid):
     bot.send_message(chatid, title)
     newest5 = CrawlUrl("https://technews.tw/")
     for text in newest5:
-        bot.send_message(chat_id=chatid, text=text)
+        bot.send_message(chatid, text)
 
 
 if __name__ == '__main__':
