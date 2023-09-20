@@ -76,10 +76,11 @@ async def MaunalCommands_2(update: Update, context: ContextTypes.DEFAULT_TYPE):
 def AutoCommand(tokens, chatid):
     bot = telebot.TeleBot(tokens)
     title = "   {} 科技新報   \n".format(date.today())
+    print(title)
     bot.send_message(chatid, title)
-    newest5 = CrawlUrl("https://technews.tw/")
-    for text in newest5:
-        bot.send_message(chatid, text)
+    # newest5 = CrawlUrl("https://technews.tw/")
+    # for text in newest5:
+    #     bot.send_message(chatid, text)
 
 
 if __name__ == '__main__':
