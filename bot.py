@@ -1,8 +1,9 @@
 import os
-import telebot
 import requests
 from datetime import date
 from bs4 import BeautifulSoup
+
+import telebot
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, ContextTypes, filters
 
@@ -78,9 +79,9 @@ def AutoCommand(tokens, chatid):
     title = "   {} 科技新報   \n".format(date.today())
     
     bot.send_message(chatid, title)
-    # newest5 = CrawlUrl("https://technews.tw/")
-    # for text in newest5:
-    #     bot.send_message(chatid, text)
+    newest5 = CrawlUrl("https://technews.tw/")
+    for text in newest5:
+        bot.send_message(chatid, text)
 
 
 if __name__ == '__main__':
@@ -98,7 +99,7 @@ if __name__ == '__main__':
     app.add_handler(CommandHandler("finance", MaunalCommands_1))
     app.add_handler(MessageHandler(filters=filters.TEXT, callback=MaunalCommands_2))
     
-    
+    # 主動傳遞最新新聞
     AutoCommand(tokens, chatid)
     # 開始運作bot
     # print("start polling")
